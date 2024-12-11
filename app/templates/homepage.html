@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-image: url('https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VhcmNofDIwfHxjb252ZXJ0JTIwY29sb3J8ZW58MHx8fHwxNjc0Njc1NzE5&ixlib=rb-4.0.3&q=80&w=1080');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            font-family: 'Arial', sans-serif;
+        }
+        .overlay {
+            background-color: rgba(0, 0, 0, 0.5);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        #statistics {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        footer {
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 10px 0;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Header -->
+<header class='flex shadow-md py-4 px-4 sm:px-10 bg-white font-[sans-serif] min-h-[70px] tracking-wide relative z-50'>
+    <div class='flex flex-wrap items-center justify-between gap-5 w-full'>
+        <a href="javascript:void(0)">
+            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="#007bff" viewBox="0 0 16 16">
+                <text x="0" y="15" font-size="15" fill="#007bff" font-family="Arial">K</text>
+            </svg>
+        </a>
+
+        <div id="collapseMenu" class='max-lg:hidden lg:!block'>
+            <ul class='lg:flex gap-x-5'>
+                <li class='max-lg:border-b border-gray-300 max-lg:py-3 px-3'>
+                    <a href='#home' class='hover:text-[#007bff] text-[#007bff] block font-semibold text-[15px]'>Home</a>
+                </li>
+                <li class='max-lg:border-b border-gray-300 max-lg:py-3 px-3'>
+                    <a href='#team' class='hover:text-[#007bff] text-gray-500 block font-semibold text-[15px]'>Team</a>
+                </li>
+                <li class='max-lg:border-b border-gray-300 max-lg:py-3 px-3'>
+                    <a href='#feature' class='hover:text-[#007bff] text-gray-500 block font-semibold text-[15px]'>Feature</a>
+                </li>
+                <li class='max-lg:border-b border-gray-300 max-lg:py-3 px-3'>
+                    <a href='#contact' class='hover:text-[#007bff] text-gray-500 block font-semibold text-[15px]'>Contact</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class='flex max-lg:ml-auto space-x-3'>
+            <button id="toggleOpen" class='lg:hidden'>
+                <svg class="w-7 h-7" fill="#000" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path>
+                </svg>
+            </button>
+        </div>
+    </div>
+</header>
+
+<div id="home" class="overlay">
+    <h2 class="text-5xl text-white font-bold mb-4">Welcome to Our Waste Management Platform</h2>
+    <p class="text-lg text-white mb-8">
+        Join us in our mission to promote sustainable waste management. Our platform empowers you to manage plastic waste effectively while earning rewards for your efforts.
+    </p>
+    
+    <h3 class="text-2xl text-white mb-4">What We Do</h3>
+    <p class="text-lg text-white mb-8 mx-4">
+        We provide a seamless solution for waste management. Users can easily request pickups, track their recycling efforts, and earn reward points for their contributions to a cleaner environment.
+    </p>
+    
+    <div class="mt-8">
+        <a href="{% url 'login' %}" class="bg-green-600 text-white py-2 px-4 rounded mr-4 hover:bg-green-500 transition duration-300">Login</a>
+        <a href="{% url 'register' %}" class="bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-500 transition duration-300">Register</a>
+    </div>
+</div>
+
+<div id="team" class="flex flex-col items-center mt-20">
+    <h2 class="text-3xl font-bold mb-4">Meet Our Team</h2>
+    <div class="flex justify-around mb-4 w-full max-w-2xl">
+        <div class="text-center">
+            <h3 class="text-xl font-semibold">John Doe</h3>
+            <p class="text-sm">Founder & CEO</p>
+            <p class="text-sm">With over 10 years of experience in waste management, John leads our team with a vision for sustainability.</p>
+        </div>
+        <div class="text-center">
+            <h3 class="text-xl font-semibold">Jane Smith</h3>
+            <p class="text-sm">Chief Operations Officer</p>
+            <p class="text-sm">Jane ensures our operations run smoothly and efficiently, focusing on customer satisfaction.</p>
+        </div>
+        <div class="text-center">
+            <h3 class="text-xl font-semibold">Mike Johnson</h3>
+            <p class="text-sm">Head of Marketing</p>
+            <p class="text-sm">Mike brings innovative marketing strategies to promote our platform and engage users.</p>
+        </div>
+        <div class="text-center">
+            <h3 class="text-xl font-semibold">Khushi Patel</h3>
+            <p class="text-sm">Product Manager</p>
+            <p class="text-sm">Khushi oversees product development, ensuring our services meet user needs and expectations.</p>
+        </div>
+        <div class="text-center">
+            <h3 class="text-xl font-semibold">Vaibhav Sharma</h3>
+            <p class="text-sm">Technical Lead</p>
+            <p class="text-sm">Vaibhav manages the technical team and ensures the platform operates seamlessly.</p>
+        </div>
+    </div>
+</div>
+
+<div id="feature" class="flex flex-col items-center mt-20">
+    <h2 class="text-3xl font-bold mb-4">Features</h2>
+    <div class="flex justify-around mb-4 w-full max-w-2xl">
+        <div class="text-center">
+            <h3 class="text-xl font-semibold">Easy Pickup Requests</h3>
+            <p class="text-sm">Request waste pickups with just a few clicks through our user-friendly interface.</p>
+        </div>
+        <div class="text-center">
+            <h3 class="text-xl font-semibold">Track Your Recycling</h3>
+            <p class="text-sm">Monitor your recycling efforts and impact through detailed analytics and reports.</p>
+        </div>
+        <div class="text-center">
+            <h3 class="text-xl font-semibold">Earn Rewards</h3>
+            <p class="text-sm">Get rewarded for your contributions to a cleaner environment with our loyalty program.</p>
+        </div>
+        <div class="text-center">
+            <h3 class="text-xl font-semibold">Community Engagement</h3>
+            <p class="text-sm">Join a community of like-minded individuals who are passionate about sustainability.</p>
+        </div>
+        <div class="text-center">
+            <h3 class="text-xl font-semibold">Educational Resources</h3>
+            <p class="text-sm">Access valuable resources and tips to improve your waste management practices.</p>
+        </div>
+    </div>
+</div>
+
+<div id="statistics" class="flex flex-col items-center mt-20">
+    <h2 class="text-3xl font-bold mb-4">Our Impact</h2>
+    <div class="flex justify-around mb-4 w-full max-w-2xl">
+        <div class="text-center">
+            <h3 class="text-xl font-semibold">10,000+</h3>
+            <p class="text-sm">Users Engaged</p>
+        </div>
+        <div class="text-center">
+            <h3 class="text-xl font-semibold">5,000+</h3>
+            <p class="text-sm">Collection Requests</p>
+        </div>
+        <div class="text-center">
+            <h3 class="text-xl font-semibold">15,000 kg</h3>
+            <p class="text-sm">Plastic Recycled</p>
+        </div>
+    </div>
+</div>
+
+<!-- Contact Section in Footer -->
+<footer class="bg-gray-800 text-white">
+    <div class="flex justify-between p-8 mx-auto max-w-4xl">
+        <div>
+            <h1 class="text-3xl font-extrabold">Let's Talk</h1>
+            <p class="text-sm text-gray-400 mt-3">Have some big idea or brand to develop and need help? Then reach out we'd love to hear about your project and provide help.</p>
+            <div class="mt-12">
+                <h2 class="text-lg font-extrabold">Email</h2>
+                <ul class="mt-3">
+                    <li class="flex items-center">
+                        <div class="bg-[#e6e6e6cf] h-10 w-10 rounded-full flex items-center justify-center shrink-0">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill='#007bff' viewBox="0 0 16 16">
+                                <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2 0h12v1H2V4zm0 2h12v1H2V6zm0 2h12v1H2V8zm0 2h12v1H2v-1z"/>
+                            </svg>
+                        </div>
+                        <a target="blank" href="#" class="text-[#007bff] text-sm ml-3">
+                            <small class="block">Mail</small>
+                            <strong>example@gmail.com</strong>
+                        </a>
+                    </li>
+                </ul>
+                <div class="mt-4">
+                    <h2 class="text-lg font-extrabold">Socials</h2>
+                    <ul class="flex mt-3 space-x-4">
+                        <li><a href="#" class="text-[#007bff] hover:text-blue-500">Facebook</a></li>
+                        <li><a href="#" class="text-[#007bff] hover:text-blue-500">Twitter</a></li>
+                        <li><a href="#" class="text-[#007bff] hover:text-blue-500">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="w-1/2" id="contact">
+            <h2 class="text-lg font-extrabold">Contact Form</h2>
+            <form class="mt-4" action="{% url 'contact' %}" method="post">
+                {% csrf_token %}
+                <div class="mb-4">
+                    <label class="block text-sm">Name</label>
+                    <input type="text" name="name" class="w-full px-3 py-2 border border-gray-300 rounded" placeholder="Your Name" required>
+                </div>
+                <div class="mb-4">
+                    <label class="block text-sm">Email</label>
+                    <input type="email" name="email" class="w-full px-3 py-2 border border-gray-300 rounded" placeholder="Your Email" required>
+                </div>
+                <div class="mb-4">
+                    <label class="block text-sm">Subject</label>
+                    <input type="text" name="subject" class="w-full px-3 py-2 border border-gray-300 rounded" placeholder="Subject" required>
+                </div>
+                <div class="mb-4">
+                    <label class="block text-sm">Message</label>
+                    <textarea name="message" class="w-full px-3 py-2 border border-gray-300 rounded" placeholder="Your Message" required></textarea>
+                </div>
+                <button type="submit" class="bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-500">Send Message</button>
+            </form>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
